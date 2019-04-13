@@ -8,21 +8,33 @@ import { AccueilComponent } from './accueil/accueil.component';
 import { TableauComponent } from './tableau/tableau.component';
 import { InscriptionComponent } from './inscription/inscription.component';
 import { ConsultationComponent } from './consultation/consultation.component';
+import { Routes, RouterModule } from '@angular/router';
+
+const routes: Routes = [
+  { path: '', component: AppComponent },
+  { path: 'accueil', component: AccueilComponent },
+  { path: 'form', component: FormulaireComponent },
+  { path: 'tab', component: TableauComponent },
+  { path: 'insc', component: InscriptionComponent },
+  { path: 'consult', component: ConsultationComponent }
+];
 
 @NgModule({
   declarations: [
     AppComponent,
-    FormulaireComponent,
     AccueilComponent,
+    FormulaireComponent,
     TableauComponent,
     InscriptionComponent,
     ConsultationComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }
